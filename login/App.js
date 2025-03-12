@@ -28,7 +28,7 @@ export default function App() {
 				alignItems: 'center',
 			}}
 		>
-			<Text style={{ fontSize: 48, textAlign: 'center' }}>Bem vindo ao APP TextInput</Text>
+			<Text style={{ fontSize: 48, textAlign: 'center' }}>Bem vindo ao APP Login</Text>
 			<TextInput
 				placeholder='informe seu login'
 				autoCapitalize='none'
