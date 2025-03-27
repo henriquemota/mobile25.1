@@ -1,9 +1,7 @@
-import { Feather } from '@expo/vector-icons'
-import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native'
+import { ScrollView, Text, View } from 'react-native'
 import Botao from '../components/botao'
+import ItemLista from '../components/itemLista'
 import styles from '../styles'
-
-import avatar from '../../assets/avatar.png'
 
 const Home = () => {
 	const data = []
@@ -41,14 +39,14 @@ const Home = () => {
 			<View style={{ flex: 1 }}>
 				<ScrollView>
 					{[
-						<ItemData key={1} />,
-						<ItemData key={2} />,
-						<ItemData key={3} />,
-						<ItemData key={4} />,
-						<ItemData key={5} />,
+						<ItemLista key={1} />,
+						<ItemLista key={2} />,
+						<ItemLista key={3} />,
+						<ItemLista key={4} />,
+						<ItemLista key={5} />,
 					]}
 					{data.map(function (item, key) {
-						return <ItemData key={key} />
+						return <ItemLista key={key} />
 					})}
 				</ScrollView>
 			</View>
@@ -60,35 +58,6 @@ const Home = () => {
 				<Botao icone='search' />
 				<Botao icone='user' />
 			</View>
-		</View>
-	)
-}
-
-const ItemData = ({ description = 'Row Header', bodyDescription = 'Body copy description' }) => {
-	return (
-		<View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 16 }}>
-			<TouchableOpacity
-				style={{
-					borderWidth: 1,
-					backgroundColor: '#fff',
-					height: 40,
-					width: 40,
-					borderRadius: 20,
-					justifyContent: 'center',
-					alignItems: 'center',
-				}}
-			>
-				<Image source={avatar} />
-			</TouchableOpacity>
-
-			<View style={{ flex: 1, marginHorizontal: 16, justifyContent: 'center' }}>
-				<Text style={{ fontWeight: 'bold', fontSize: 16 }}>{description}</Text>
-				<Text style={{ fontWeight: '200' }}>{bodyDescription}</Text>
-			</View>
-
-			<TouchableOpacity>
-				<Feather name='chevron-right' size={24} />
-			</TouchableOpacity>
 		</View>
 	)
 }
