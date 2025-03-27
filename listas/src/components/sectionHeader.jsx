@@ -2,7 +2,7 @@ import React from 'react'
 import { ScrollView, Text, View } from 'react-native'
 import styles from '../styles'
 import Botao from './botao'
-import ItemLista from './itemLista'
+import { ItemLista } from './itemLista'
 
 const SectionHeader = ({ data = [] }) => {
 	return (
