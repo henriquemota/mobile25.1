@@ -1,7 +1,7 @@
 {
 	"expo": {
-		"name": "interface2",
-		"slug": "interface2",
+		"name": "listas",
+		"slug": "listas",
 		"version": "1.0.0",
 		"orientation": "portrait",
 		"icon": "./assets/icon.png",
