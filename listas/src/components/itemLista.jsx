@@ -3,7 +3,8 @@ import { Image, Text, TouchableOpacity, View } from 'react-native'
 
 import avatar from '../../assets/avatar.png'
 
-const ItemLista = ({ description = 'Row Header', bodyDescription = 'Body copy description' }) => {
+const ItemLista = (props) => {
+	const { description = 'Row Header', bodyDescription = 'Body copy description' } = props
 	return (
 		<View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 16 }}>
 			<TouchableOpacity

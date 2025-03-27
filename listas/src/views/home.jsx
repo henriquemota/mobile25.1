@@ -1,11 +1,13 @@
-import { ScrollView, Text, View } from 'react-native'
+import { Text, View } from 'react-native'
 import Botao from '../components/botao'
-import ItemLista from '../components/itemLista'
+import SectionHeader from '../components/sectionHeader'
 import styles from '../styles'
 
 const Home = () => {
-	const data = []
-	for (let i = 0; i < 10; i++) data.push(`Dados aleatórios ${i}`)
+	const data1 = []
+	for (let i = 0; i < 10; i++) data1.push(`Dados aleatórios de bla ${i}`)
+	const data2 = []
+	for (let i = 0; i < 10; i++) data2.push(`Dados aleatórios de ble ${i}`)
 
 	return (
 		<View style={[styles.container]}>
@@ -20,36 +22,8 @@ const Home = () => {
 					<Botao icone='more-horizontal' />
 				</View>
 			</View>
-			{/* Item 02 */}
-			<View
-				style={[
-					styles.containerHorizontal,
-					{
-						marginTop: 16,
-						borderTopWidth: 1,
-						borderBottomWidth: 1,
-						borderColor: '#c3c3c3c3',
-						paddingVertical: 16,
-					},
-				]}
-			>
-				<Text style={{ textTransform: 'uppercase', fontSize: 16, fontWeight: '400' }}>Section Header</Text>
-				<Botao texto='View all' />
-			</View>
-			<View style={{ flex: 1 }}>
-				<ScrollView>
-					{[
-						<ItemLista key={1} />,
-						<ItemLista key={2} />,
-						<ItemLista key={3} />,
-						<ItemLista key={4} />,
-						<ItemLista key={5} />,
-					]}
-					{data.map(function (item, key) {
-						return <ItemLista key={key} />
-					})}
-				</ScrollView>
-			</View>
+			<SectionHeader data={data1} />
+			<SectionHeader data={data2} />
 			{/* Item 03 */}
 			<View style={[styles.containerHorizontal, { justifyContent: 'space-around', paddingVertical: 8 }]}>
 				<Botao icone='home' />
