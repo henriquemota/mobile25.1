@@ -4,10 +4,21 @@ import SectionHeader from '../components/sectionHeader'
 import styles from '../styles'
 
 const Home = () => {
-	const data1 = []
-	for (let i = 0; i < 10; i++) data1.push(`Dados aleatórios de bla ${i}`)
-	const data2 = []
-	for (let i = 0; i < 10; i++) data2.push(`Dados aleatórios de ble ${i}`)
+	const data = Array.from({ length: 10 }, (_, index) => ({
+		description: `Person ${index + 1}`,
+		bodyDescription: [
+			'Computer Science',
+			'Business Administration',
+			'Mechanical Engineering',
+			'Psychology',
+			'Graphic Design',
+			'Medicine',
+			'Law',
+			'Architecture',
+			'Marketing',
+			'Physics',
+		][Math.floor(Math.random() * 10)],
+	}))
 
 	return (
 		<View style={[styles.container]}>
@@ -22,8 +33,8 @@ const Home = () => {
 					<Botao icone='more-horizontal' />
 				</View>
 			</View>
-			<SectionHeader data={data1} />
-			<SectionHeader data={data2} />
+			<SectionHeader data={data} />
+			<SectionHeader data={data} />
 			{/* Item 03 */}
 			<View style={[styles.containerHorizontal, { justifyContent: 'space-around', paddingVertical: 8 }]}>
 				<Botao icone='home' />

@@ -1,5 +1,5 @@
 import React from 'react'
-import { ScrollView, Text, View } from 'react-native'
+import { FlatList, Text, View } from 'react-native'
 import styles from '../styles'
 import Botao from './botao'
 import { ItemLista } from './itemLista'
@@ -22,13 +22,20 @@ const SectionHeader = ({ data = [] }) => {
 				<Text style={{ textTransform: 'uppercase', fontSize: 16, fontWeight: '400' }}>Section Header</Text>
 				<Botao texto='View all' />
 			</View>
+			<FlatList
+				data={data}
+				renderItem={({ item }) => <ItemLista description={item.description} bodyDescription={item.bodyDescription} />}
+				keyExtractor={(item, ix) => ix}
+			/>
+			{/*
 			<View style={{ flex: 1 }}>
 				<ScrollView>
-					{data.map(function (item, key) {
-						return <ItemLista key={key} description={item} bodyDescription={item} />
+					{data.map(function ({ description = 'Description', bodyDescription = 'bodyDescription' }, key) {
+						return <ItemLista key={key} description={description} bodyDescription={bodyDescription} />
 					})}
 				</ScrollView>
-			</View>
+			</View> 
+			*/}
 		</React.Fragment>
 	)
 }
