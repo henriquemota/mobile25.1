@@ -1,7 +1,9 @@
 import { Feather } from '@expo/vector-icons'
-import { ScrollView, Text, TouchableOpacity, View } from 'react-native'
+import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native'
 import Botao from '../components/botao'
 import styles from '../styles'
+
+import avatar from '../../assets/avatar.png'
 
 const Home = () => {
 	const data = []
@@ -62,22 +64,26 @@ const Home = () => {
 	)
 }
 
-const ItemData = () => {
+const ItemData = ({ description = 'Row Header', bodyDescription = 'Body copy description' }) => {
 	return (
 		<View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 16 }}>
 			<TouchableOpacity
 				style={{
 					borderWidth: 1,
-					backgroundColor: '#b8b8b8',
-					height: 60,
-					width: 60,
-					borderRadius: 30,
+					backgroundColor: '#fff',
+					height: 40,
+					width: 40,
+					borderRadius: 20,
+					justifyContent: 'center',
+					alignItems: 'center',
 				}}
-			></TouchableOpacity>
+			>
+				<Image source={avatar} />
+			</TouchableOpacity>
 
-			<View>
-				<Text>Row Header</Text>
-				<Text>Body copy description</Text>
+			<View style={{ flex: 1, marginHorizontal: 16, justifyContent: 'center' }}>
+				<Text style={{ fontWeight: 'bold', fontSize: 16 }}>{description}</Text>
+				<Text style={{ fontWeight: '200' }}>{bodyDescription}</Text>
 			</View>
 
 			<TouchableOpacity>
