@@ -1,21 +1,27 @@
-import { NavigationContainer } from '@react-navigation/native'
+import { NavigationContainer, useNavigation } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { Text, View } from 'react-native'
+import { Button, Text, View } from 'react-native'
 
 const Stack = createNativeStackNavigator()
 
 function Home() {
+	const { navigate } = useNavigation()
+
 	return (
 		<View>
 			<Text>Home</Text>
+			<Button title='Vai para a tela sobre' onPress={() => navigate('about')} />
 		</View>
 	)
 }
 
 function About() {
+	const { goBack } = useNavigation()
+
 	return (
 		<View>
 			<Text>About</Text>
+			<Button title='Voltar' onPress={goBack} />
 		</View>
 	)
 }
@@ -23,9 +29,9 @@ function About() {
 export default function App() {
 	return (
 		<NavigationContainer>
-			<Stack.Navigator>
-				<Stack.Screen name='home' component={Home} />
-				<Stack.Screen name='about' component={About} />
+			<Stack.Navigator screenOptions={{ headerShown: true }}>
+				<Stack.Screen name='home' component={Home} options={{ title: 'Home' }} />
+				<Stack.Screen name='about' component={About} option={{ title: 'Sobre' }} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	)
