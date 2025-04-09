@@ -1,6 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native'
-// import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 import { registerRootComponent } from 'expo'
 
@@ -11,8 +11,8 @@ import Pagina1Screen from './src/views/pagina1'
 import Pagina2Screen from './src/views/pagina2'
 import Pagina3Screen from './src/views/pagina3'
 
-// const { Navigator, Screen } = createNativeStackNavigator()
-const { Navigator, Screen } = createBottomTabNavigator()
+const { Navigator, Screen } = createNativeStackNavigator()
+// const { Navigator, Screen } = createBottomTabNavigator()
 
 const App = () => {
 	return (
